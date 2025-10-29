@@ -1,0 +1,36 @@
+TASK 1:
+Write a Java program to perform encryption and decryption using the following algorithms.
+a. Ceaser cipher b. Substitution cipher c. Hill Cipher
+
+TASK 2:
+Implement symmetric block cipher encryption and decryption using DES algorithm in C/JAVA.
+
+TASK 3:
+Write a C/JAVA program to implement encryption technique using Blowfish algorithm.
+
+TASK 4:
+Implement the encryption of block chunk of 128 bits size using AES algorithm in C/JAVA.
+
+TASK 5:
+Write a C/JAVA program on Rivest Cipher 4(RC4) logic.
+
+TASK 6:
+Implement DES-2 and DES-3 using Java cryptography package.
+
+TASK 7:
+Design a Java program to implement RSA algorithm.
+
+TASK 8:
+Implement key exchange protocol using the Diffie-Hellman algorithm.
+
+TASK 9:
+Calculate the message digest of a text using the SHA-1 algorithm in JAVA.
+
+TASK 10:
+Calculate the message digest of a text using the MD5 algorithm in JAVA.
+
+TASK 11:
+Explore the Java classes related to digital certificates.
+
+TASK 12:
+Implement a program in java, which performs Cross-site scripting(XSS) Attacks.
