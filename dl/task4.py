@@ -1,6 +1,5 @@
 
 
-from random import sample
 import numpy as np
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
@@ -49,10 +48,10 @@ perceptron.fit(X_train, y_train)
 predictions = perceptron.predict(X_test)
 
 y_test_binary = np.array([1 if i > 0 else 0 for i in y_test])
-accuracy = np.sum(predictions == y_test_binary) / len(y_test_binary)
+accuracy = np.sum(predictions == y_test_binary) # / len(y_test_binary)
 print(f'Perceptron classification accuracy: {accuracy * 100:.2f}%')
 
-samples = sample(range(len(X_test)), 5)
-preds = perceptron.predict(samples)
-print("Sample predictions:", preds)
+sample = np.array([[5.1, 3.5, 1.4, 0.2]])
+preds = perceptron.predict(sample)
+print("Sample predictions:", preds[0]) # rm [0]
 
