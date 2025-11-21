@@ -34,3 +34,45 @@ Explore the Java classes related to digital certificates.
 
 TASK 12:
 Implement a program in java, which performs Cross-site scripting(XSS) Attacks.
+
+______________________________________________
+
+
+./t1:
+Basic.class         CaesarCipher.java  HillCipher.java  SubstitutionCipher.class
+CaesarCipher.class  HillCipher.class   Hill.class       SubstitutionCipher.java
+
+./t10:
+MD5.class  MD5.java
+
+./t11:
+Send.java
+
+./t12:
+vulnerable_xss.py  XSSVulnerabilityScanner.java
+
+./t2:
+DESEncryptionDecryption.class  DESEncryptionDecryption.java
+
+./t3:
+BlowfishEncryption.class  BlowfishEncryption.java
+
+./t4:
+AES.class  AES.java
+
+./t5:
+RCA4.class  RCA4.java
+
+./t6:
+DESEncryptionDecryption.class  DESEncryptionDecryption.java
+
+./t7:
+RSA.class  RSA.java
+
+./t8:
+DiffieHellman.class  DiffieHellman.java
+
+./t9:
+SHA1.class  SHA1.java
+
+
