@@ -6,7 +6,6 @@ import javax.crypto.SecretKey;
 
 public class BlowfishEncryption {
 
-  // Encrypt plaintext using Blowfish algorithm
   public static String encrypt(String plainText, SecretKey secretKey) throws Exception {
     Cipher cipher = Cipher.getInstance("Blowfish");
     cipher.init(Cipher.ENCRYPT_MODE, secretKey);
@@ -14,7 +13,6 @@ public class BlowfishEncryption {
     return Base64.getEncoder().encodeToString(encrypted);
   }
 
-  // Decrypt ciphertext using Blowfish algorithm
   public static String decrypt(String encryptedText, SecretKey secretKey) throws Exception {
     Cipher cipher = Cipher.getInstance("Blowfish");
     cipher.init(Cipher.DECRYPT_MODE, secretKey);
@@ -24,20 +22,16 @@ public class BlowfishEncryption {
 
   public static void main(String[] args) {
     try (Scanner scanner = new Scanner(System.in)) {
-      // Get input from user
       System.out.print("Enter text to encrypt: ");
       String plainText = scanner.nextLine();
 
-      // Generate secret key for Blowfish
       KeyGenerator keyGen = KeyGenerator.getInstance("Blowfish");
-      keyGen.init(128); // 128-bit key
+      keyGen.init(128);
       SecretKey secretKey = keyGen.generateKey();
 
-      // Encrypt and decrypt
       String encryptedText = encrypt(plainText, secretKey);
       String decryptedText = decrypt(encryptedText, secretKey);
 
-      // Output
       System.out.println("Encrypted Text: " + encryptedText);
       System.out.println("Decrypted Text: " + decryptedText);
 

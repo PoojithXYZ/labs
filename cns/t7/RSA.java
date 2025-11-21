@@ -11,7 +11,7 @@ public class RSA {
   private BigInteger d;
   private int bitlength = 1024;
   private int blocksize = 256;
-  // blocksize in byte
+  
   private Random r;
 
   public RSA() {
@@ -42,10 +42,8 @@ public class RSA {
     teststring = in.readLine();
     System.out.println("Encrypting String: " + teststring);
     System.out.println("String in Bytes: " + bytesToString(teststring.getBytes()));
-    // encrypt
     byte[] encrypted = rsa.encrypt(teststring.getBytes());
     System.out.println("Encrypted String in Bytes: " + bytesToString(encrypted));
-    // decrypt
     byte[] decrypted = rsa.decrypt(encrypted);
     System.out.println("Decrypted String in Bytes: " + bytesToString(decrypted));
     System.out.println("Decrypted String: " + new String(decrypted));
@@ -59,13 +57,9 @@ public class RSA {
     return test;
   }
 
-  // Encrypt message
-
   public byte[] encrypt(byte[] message) {
     return (new BigInteger(message)).modPow(e, N).toByteArray();
   }
-
-  // Decrypt message
 
   public byte[] decrypt(byte[] message) {
 
