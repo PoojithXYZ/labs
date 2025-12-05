@@ -80,16 +80,17 @@ def save_generated_images(epoch, examples=10, dim=(1, 10), figsize=(10, 1)):
     generated_images = generator.predict(noise)
     generated_images = 0.5 * generated_images + 0.5
     plt.figure(figsize=figsize)
-    
+
     for i in range(examples):
         plt.subplot(dim[0], dim[1], i+1)
         plt.imshow(generated_images[i], interpolation='nearest', cmap='gray')
         plt.axis('off')
-    
+
     plt.tight_layout()
     plt.savefig(f'generated_image_{epoch}.png')
-    plt.close()
+    # plt.close()
 
 
-train_gan(epochs=5000, batch_size=64, sample_interval=1000)
+train_gan(epochs=50, batch_size=64, sample_interval=10)
+
 

@@ -50,6 +50,11 @@ gan = build_gan(generator, discriminator)
 
 optimizer = tf.keras.optimizers.Adam(0.0002, 0.5)
 
+discriminator.compile(loss='binary_crossentropy', optimizer=optimizer, metrics=['accuracy'])
+
+gan.compile(loss='binary_crossentropy', optimizer=optimizer)
+
+
 def gan_loss(y_true, y_pred):
     return tf.keras.losses.BinaryCrossentropy()(y_true, y_pred)
 
@@ -86,7 +91,8 @@ def save_generated_images(epoch, examples=10, dim=(1, 10), figsize=(10, 1)):
         plt.axis('off')
     plt.tight_layout()
     plt.savefig(f'generated_image_{epoch}.png')
-    plt.close()
+    # plt.close()
 
-train_gan(epochs=5000, batch_size=64, sample_interval=1000)
+train_gan(epochs=50, batch_size=64, sample_interval=10)
+
 

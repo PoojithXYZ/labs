@@ -1,3 +1,6 @@
+task1.py   task11.py  task2.py  task4.py        task5.py  task7.py  task9.py
+task10.py  task12.py  task3.py  task4manual.py  task6.py  task8.py  tasks.txt
+
 
 TASK-1: Setting up the Spyder IDE Environment and Executing a Python Program
 
