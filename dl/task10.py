@@ -5,10 +5,10 @@ import matplotlib.pyplot as plt
 
 (x_train, _), (x_test, _) = mnist.load_data()
 
-x_train = x_train.astype('float32') / 255.0
-x_test = x_test.astype('float32') / 255.0
 x_train = x_train.reshape((x_train.shape[0], 28, 28, 1))
 x_test = x_test.reshape((x_test.shape[0], 28, 28, 1))
+x_train = x_train.astype('float32') / 255.0
+x_test = x_test.astype('float32') / 255.0
 
 input_img = layers.Input(shape=(28, 28, 1))
 
@@ -20,13 +20,14 @@ encoded = layers.MaxPooling2D((2, 2), padding='same')(x)
 x = layers.Conv2DTranspose(64, (3, 3), activation='relu', padding='same')(encoded)
 x = layers.UpSampling2D((2, 2))(x)
 x = layers.Conv2DTranspose(32, (3, 3), activation='relu', padding='same')(x)
+x = layers.UpSampling2D((2, 2))(x)
 decoded = layers.Conv2DTranspose(1, (3, 3), activation='sigmoid', padding='same')(x)
 
 autoencoder = models.Model(input_img, decoded)
 
 autoencoder.compile(optimizer='adam', loss='binary_crossentropy')
 
-autoencoder.fit(x_train, x_train, epochs=5, batch_size=128, validation_data=(x_test, x_test))
+autoencoder.fit(x_train, x_train, epochs=3, batch_size=128, validation_data=(x_test, x_test))
 
 test_loss = autoencoder.evaluate(x_test, x_test)
 print(f"Test Loss: {test_loss:.4f}")
